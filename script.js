@@ -103,13 +103,35 @@ document.addEventListener("DOMContentLoaded", () => {
       properties = propertyData1;
       
       //loadPropertyCards(propertyData1);
-      //displayProperties(propertyData1);
+      displayProperties(propertyData1);
       alert("la data fue esogida directamente");
     })
     .catch((error) => console.error("Error al cargar el archivo:", error));
     alert("la data fue NO 1111 esogida directamente");
 });
 
+
+
+// Renderizar las tarjetas de propiedades
+function loadPropertyCards(data) {
+  const container = document.getElementById("propertyCards");
+  
+  container.innerHTML = ""; // Limpiar contenido previo
+  
+
+  data.forEach((property) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <h3>${property.Nombre}</h3>
+      <p><strong>Ubicación:</strong> ${property.Ubicación}</p>
+      <p><strong>Precio:</strong> $${property.Precio}</p>
+      <p><strong>Habitaciones:</strong> ${property.Habitaciones}</p>
+    `;
+    card.addEventListener("click", () => showPropertyDetail(property));
+    container.appendChild(card);
+  });
+}
 
 // Función para mostrar las propiedades
 function displayProperties(propertiesToShow) {
