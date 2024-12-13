@@ -122,6 +122,7 @@ function displayProperties(propertiesToShow) {
       propertyCard.classList.add('property-card');
 
       propertyCard.innerHTML = `
+      
           <img src="${property.image}" alt="${property.title}">
           <h3>${property.title}</h3>
           <p>${property.description}</p>
