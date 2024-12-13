@@ -1,7 +1,7 @@
 // script.js
 
 // Ejemplo de propiedades (estas pueden ser obtenidas de un backend o base de datos)
-/*
+
 const properties = [
   {
       id: 1,
@@ -87,10 +87,14 @@ const properties = [
   location: 'Centro',
 },
 ];
-*/
-//esta parte se habilita cuando la base de datos ya este arriba. 
+
+
+// Variables globales
+//let propertyData = [];
+
 let propertyData1 = [];
 // Cargar el archivo Excel al cargar la página
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch("./propiedades11.xlsx") // Archivo en la carpeta raíz
     .then((response) => response.arrayBuffer())
@@ -102,121 +106,16 @@ document.addEventListener("DOMContentLoaded", () => {
       propertyData1 = sheetData1;
       properties = propertyData1;
       
-      //loadPropertyCards(propertyData1);
-      displayProperties(propertyData1);
-      alert("la data fue esogida directamente");
+      loadPropertyCards(propertyData1);
+      //displayProperties(propertyData1);
+      alert("la data fue cargada directamente");
     })
     .catch((error) => console.error("Error al cargar el archivo:", error));
     //alert("la data fue NO 1111 esogida directamente");
 });
 
 
-
-// Función para mostrar las propiedades
-function displayProperties(propertiesToShow) {
-  const propertyList = document.getElementById('property-list');
-  propertyList.innerHTML = ''; // Limpiar lista existente
-
-  propertiesToShow.forEach(property => {
-      const propertyCard = document.createElement('div');
-      propertyCard.classList.add('propertyCard');
-      
-
-      propertyCard.innerHTML = `
-      
-          <img src="${property.image}" alt="${property.title}">
-          <h3>${property.title}</h3>
-          <p>${property.description}</p>
-          <p><strong>Precio:</strong> ${property.price}</p>
-          
-      `;
-      propertyCard.addEventListener("click", () => showPropertyDetail(property));
-      propertyList.appendChild(propertyCard);
-
-  
-  });
-}
-
-/*
-<button onclick="contactProperty(${property.id})">Contactar</button>
-
-
-function displayProperties(propertiesToShow) {
-  const propertyList = document.getElementById('property-list');
-  propertyList.innerHTML = ''; // Limpiar lista existente
-
-  propertiesToShow.forEach(property => {
-      const propertyCard = document.createElement('div');
-      propertyCard.classList.add('property-card');
-
-      propertyCard.innerHTML = `
-          <img src="${propertyData.image}" alt="${propertyData.title}">
-          <h3>${propertyData.title}</h3>
-          <p>${propertyData.description}</p>
-          <p><strong>Precio:</strong> ${propertyData.price}</p>
-          <button onclick="contactProperty(${propertyData.id})">Contactar</button>
-      `;
-
-      propertyList.appendChild(propertyCard);
-  });
-}
-*/
-
-
-// Función para filtrar propiedades por ubicación
-function filterProperties() {
-  const searchInput = document.getElementById('searchInput').value.toLowerCase();
-  const filtered = properties.filter(property =>
-      property.location.toLowerCase().includes(searchInput)
-  );
-  displayProperties(filtered);
-}
-
-// Función para contactar una propiedad
-function contactProperty(id) {
-  const property = properties.find(p => p.id === id);
-  alert(`Contactando al vendedor de: ${property.title}`);
-}
-
-
-
-
-
-
-
-//////////////Ycodigo de la busqueda de la base de datos al sistema. +
-
-
-// Variables globales
-
-let propertyData = [];
-
-// Leer archivo Excel y cargar los datos
-
-
-/*
- // Cargar el archivo Excel al cargar la página
- document.addEventListener("DOMContentLoaded", () => {
-   fetch("./propiedades.xlsx") // Archivo en la carpeta raíz
-     .then((response) => response.arrayBuffer())
-     .then((data) => {
-       const workbook = XLSX.read(new Uint8Array(data), { type: "array" });
-       const sheetName = workbook.SheetNames[0];
-       const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-
-       propertyData = sheetData;
-       
-       loadPropertyCards(propertyData);
-       alert("la data fue esogida directamente");
-     })
-     .catch((error) => console.error("Error al cargar el archivo:", error));
-     //alert("la data fue NO esogida directamente");
- });
-*/
-
-
-
- document.getElementById("fileInput").addEventListener("change", (event) => {
+document.getElementById("fileInput").addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
     const reader = new FileReader();
@@ -230,58 +129,14 @@ let propertyData = [];
       const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
       // Guardar los datos en la variable global y renderizar tarjetas
-      propertyData = sheetData;
-      loadPropertyCards(propertyData);
+      propertyData1 = sheetData;
+      loadPropertyCards(propertyData1);
     };
 
     reader.readAsArrayBuffer(file);
   }
 });
 
- // Renderizar las tarjetas de propiedades
- function loadPropertyCards(data) {
-   const container = document.getElementById("propertyCards");
-   
-   container.innerHTML = ""; // Limpiar contenido previo
-   
-
-   data.forEach((property) => {
-     const card = document.createElement("div");
-     card.classList.add("card");
-     card.innerHTML = `
-       <h3>${property.title}</h3>
-       <p><strong>Ubicación:</strong> ${property.location}</p>
-       <p><strong>Precio:</strong> $${property.price}</p>
-       <p><strong>Habitaciones:</strong> ${property.habita}</p>
-     `;
-     card.addEventListener("click", () => showPropertyDetail(property));
-     container.appendChild(card);
-   });
- }
-
-
-
-
- 
-/*
-
-
-
-
-/*
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("./main/Ejemplo_Propiedades.xlsx")
-    .then((response) => response.arrayBuffer())
-    .then((data) => {
-      const workbook = XLSX.read(new Uint8Array(data), { type: "array" });
-      const sheetName = workbook.SheetNames[0];
-      const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-
-      propertyData = sheetData;
-      loadPropertyCards(propertyData);
-    })
-    .catch((error) => console.error("Error al cargar el archivo:", error));
-});
 
 // Renderizar las tarjetas de propiedades
 function loadPropertyCards(data) {
@@ -290,12 +145,12 @@ function loadPropertyCards(data) {
 
   data.forEach((property, index) => {
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("property-card");
     card.innerHTML = `
-      <h3>${property.Nombre}</h3>
-      <p><strong>Ubicación:</strong> ${property.Ubicación}</p>
-      <p><strong>Precio:</strong> $${property.Precio}</p>
-      <p><strong>Habitaciones:</strong> ${property.Habitaciones}</p>
+     <img src="${property.image}" alt="${property.title}">
+          <h3>${property.title}</h3>
+          <p>${property.description}</p>
+          <p><strong>Precio:</strong> ${property.price}</p>
     `;
 
     // Agregar evento de clic para mostrar los detalles
@@ -303,10 +158,6 @@ function loadPropertyCards(data) {
     container.appendChild(card);
   });
 }
-*/
-
-
-
 
 // Mostrar los detalles de una propiedad
 function showPropertyDetail(property) {
@@ -315,38 +166,9 @@ function showPropertyDetail(property) {
   const detailContainer = document.getElementById("propertyDetailContainer");
 
   // Llenar el detalle con la información de la propiedad
-
-  
-/*
-    <h2>${property.title}</h2>
-    <p><strong>Ubicación:</strong> ${property.location}</p>
-    <p><strong>Precio:</strong> ${property.price}</p>
-    <p><strong>Habitaciones:</strong> ${property.habita}</p>
-    <p><strong>Descripción:</strong> ${property.description}</p>
-    <p><strong>Contacto:</strong> ${property.contact}</p>
-
-    <div class="property-details">
-            <h22 id="property-title">${property.title}</h22>
-            <p id="property-description" class="product-text">
-            ${property.description}
-            </p>
-    </div>
-*/
-
-
-  
   detailContainer.innerHTML = `
-  
-    <header>
-        <h11>Detalles de la Propiedad</h11>
-    </header>
-     
 
-    <div class="property-details">
-            <h22 id="property-title">${property.title}</h22>
-    </div>
-     
-            <div class="virtual-tour">
+     <div class="virtual-tour">
                 <h3>Propiedad</h3>
                 <img src="${property.image}" alt="Foto portada propiedad">
             </div>
@@ -392,10 +214,7 @@ function showPropertyDetail(property) {
         </div>
    </div>
 
-            
   `;
-
-  
 
   // Mostrar la sección de detalles y ocultar la lista
   detailSection.style.display = "block";
@@ -413,12 +232,16 @@ document.getElementById("backButton").addEventListener("click", () => {
 
 
 
+// Función para filtrar propiedades por ubicación
+function filterProperties() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  const filtered = propertyData1.filter(property =>
+      property.location.toLowerCase().includes(searchInput)
+  );
+  loadPropertyCards(filtered);
+}
+
+
 
 // Evento de búsqueda
 document.getElementById('searchButton').addEventListener('click', filterProperties);
-
-// Mostrar todas las propiedades al cargar la página
-displayProperties(properties);
-
-
-
