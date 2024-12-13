@@ -111,10 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("la data fue cargada directamente");
     })
     .catch((error) => console.error("Error al cargar el archivo:", error));
-    //alert("la data fue NO 1111 esogida directamente");
+    alert("la data fue NO 1111 esogida directamente");
 });
 
-
+/*
 document.getElementById("fileInput").addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
@@ -136,7 +136,7 @@ document.getElementById("fileInput").addEventListener("change", (event) => {
     reader.readAsArrayBuffer(file);
   }
 });
-
+*/
 
 // Renderizar las tarjetas de propiedades
 function loadPropertyCards(data) {
