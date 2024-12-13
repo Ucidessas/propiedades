@@ -500,3 +500,58 @@ button:hover {
     background-color: #45a049;
   }
   
+
+
+
+  /* Super Button Styles */
+.super-button {
+  background: linear-gradient(90deg, #ff6f61, #ffc371);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.super-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  z-index: 0;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.super-button:hover {
+  background: linear-gradient(90deg, #ff6f61, #ff5733);
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.super-button:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+.super-button:active {
+  transform: scale(1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Text styles to avoid being affected by ::before */
+.super-button span {
+  position: relative;
+  z-index: 1;
+}
