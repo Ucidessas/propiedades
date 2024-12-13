@@ -88,7 +88,7 @@ const properties = [
 },
 ];
 */
-
+//esta parte se habilita cuando la base de datos ya este arriba. 
 let propertyData1 = [];
 // Cargar el archivo Excel al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
@@ -111,27 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-// Renderizar las tarjetas de propiedades
-function loadPropertyCards(data) {
-  const container = document.getElementById("propertyCards");
-  
-  container.innerHTML = ""; // Limpiar contenido previo
-  
-
-  data.forEach((property) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.innerHTML = `
-      <h3>${property.Nombre}</h3>
-      <p><strong>Ubicación:</strong> ${property.Ubicación}</p>
-      <p><strong>Precio:</strong> $${property.Precio}</p>
-      <p><strong>Habitaciones:</strong> ${property.Habitaciones}</p>
-    `;
-    card.addEventListener("click", () => showPropertyDetail(property));
-    container.appendChild(card);
-  });
-}
 
 // Función para mostrar las propiedades
 function displayProperties(propertiesToShow) {
@@ -202,12 +181,13 @@ function contactProperty(id) {
 
 
 // Variables globales
+
 let propertyData = [];
 
 // Leer archivo Excel y cargar los datos
 
 
-
+/*
  // Cargar el archivo Excel al cargar la página
  document.addEventListener("DOMContentLoaded", () => {
    fetch("./propiedades.xlsx") // Archivo en la carpeta raíz
@@ -225,30 +205,11 @@ let propertyData = [];
      .catch((error) => console.error("Error al cargar el archivo:", error));
      //alert("la data fue NO esogida directamente");
  });
+*/
 
- // Renderizar las tarjetas de propiedades
- function loadPropertyCards(data) {
-   const container = document.getElementById("propertyCards");
-   
-   container.innerHTML = ""; // Limpiar contenido previo
-   
 
-   data.forEach((property) => {
-     const card = document.createElement("div");
-     card.classList.add("card");
-     card.innerHTML = `
-       <h3>${property.Nombre}</h3>
-       <p><strong>Ubicación:</strong> ${property.Ubicación}</p>
-       <p><strong>Precio:</strong> $${property.Precio}</p>
-       <p><strong>Habitaciones:</strong> ${property.Habitaciones}</p>
-     `;
-     card.addEventListener("click", () => showPropertyDetail(property));
-     container.appendChild(card);
-   });
- }
-/*
 
-document.getElementById("fileInput").addEventListener("change", (event) => {
+ document.getElementById("fileInput").addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
     const reader = new FileReader();
@@ -269,6 +230,36 @@ document.getElementById("fileInput").addEventListener("change", (event) => {
     reader.readAsArrayBuffer(file);
   }
 });
+
+ // Renderizar las tarjetas de propiedades
+ function loadPropertyCards(data) {
+   const container = document.getElementById("propertyCards");
+   
+   container.innerHTML = ""; // Limpiar contenido previo
+   
+
+   data.forEach((property) => {
+     const card = document.createElement("div");
+     card.classList.add("card");
+     card.innerHTML = `
+       <h3>${property.title}</h3>
+       <p><strong>Ubicación:</strong> ${property.location}</p>
+       <p><strong>Precio:</strong> $${property.price}</p>
+       <p><strong>Habitaciones:</strong> ${property.habita}</p>
+     `;
+     card.addEventListener("click", () => showPropertyDetail(property));
+     container.appendChild(card);
+   });
+ }
+
+
+
+
+ 
+/*
+
+
+
 
 /*
 document.addEventListener("DOMContentLoaded", () => {
@@ -309,6 +300,7 @@ function loadPropertyCards(data) {
 
 
 
+
 // Mostrar los detalles de una propiedad
 function showPropertyDetail(property) {
   const detailSection = document.getElementById("property-detail");
@@ -316,13 +308,84 @@ function showPropertyDetail(property) {
   const detailContainer = document.getElementById("propertyDetailContainer");
 
   // Llenar el detalle con la información de la propiedad
+
+  
+/*
+    <h2>${property.title}</h2>
+    <p><strong>Ubicación:</strong> ${property.location}</p>
+    <p><strong>Precio:</strong> ${property.price}</p>
+    <p><strong>Habitaciones:</strong> ${property.habita}</p>
+    <p><strong>Descripción:</strong> ${property.description}</p>
+    <p><strong>Contacto:</strong> ${property.contact}</p>
+
+    <div class="property-details">
+            <h22 id="property-title">${property.title}</h22>
+            <p id="property-description" class="product-text">
+            ${property.description}
+            </p>
+    </div>
+*/
+
+
+  
   detailContainer.innerHTML = `
-    <h2>${property.Nombre}</h2>
-    <p><strong>Ubicación:</strong> ${property.Ubicación}</p>
-    <p><strong>Precio:</strong> $${property.Precio}</p>
-    <p><strong>Habitaciones:</strong> ${property.Habitaciones}</p>
-    <p><strong>Descripción:</strong> ${property.Descripción}</p>
-    <p><strong>Contacto:</strong> ${property.Contacto}</p>
+  
+    <header>
+        <h11>Detalles de la Propiedad</h11>
+    </header>
+     
+
+    <div class="property-details">
+            <h22 id="property-title">${property.title}</h22>
+    </div>
+     
+            <div class="virtual-tour">
+                <h3>Propiedad</h3>
+                <img src="${property.image}" alt="Foto portada propiedad">
+            </div>
+
+
+            <div class="product-description">
+                <h2 class="product-title">${property.title}</h2>
+                <p class="product-text">${property.description}</p>
+                <button class="product-button">Comprar Ahora</button>
+            </div>
+
+             <div class="virtual-tour">
+                <h3>Recorrido Virtual en ensamble</h3>
+                
+                    <img src="${property.foto1}" alt="Imagen 1">
+                    <img src="${property.foto2}" alt="Imagen 2">
+                
+                    <img src="${property.foto3}" alt="Imagen 3">
+                
+                    <img src="${property.foto4}" alt="Imagen 4">
+                
+                <img src="${property.foto5}" alt="Imagen 5">
+                <img src="${property.foto6}" alt="Imagen 6">
+                <img src="${property.foto7}" alt="Imagen 7">
+                <img src="${property.foto8}" alt="Imagen 8">
+            
+                
+            </div>
+
+           
+
+            <div class="contact-section">
+                <h4>Contactar al Vendedor</h4>
+                <form>
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="email" placeholder="Tu Correo" required>
+                    <input type="number" placeholder="Tu Telefono" required>
+                    <input type="text" placeholder="Asesor" required>
+                    <textarea placeholder="Tu Mensaje"></textarea>
+                    <button type="submit" class="product-button">Enviar</button>
+                </form>
+            </div>
+        </div>
+   </div>
+
+            
   `;
 
   
@@ -340,6 +403,7 @@ document.getElementById("backButton").addEventListener("click", () => {
   detailSection.style.display = "none";
   listSection.style.display = "block";
 });
+
 
 
 
