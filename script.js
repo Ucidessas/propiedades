@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("la data fue esogida directamente");
     })
     .catch((error) => console.error("Error al cargar el archivo:", error));
-    alert("la data fue NO 1111 esogida directamente");
+    //alert("la data fue NO 1111 esogida directamente");
 });
 
 
@@ -129,8 +129,12 @@ function displayProperties(propertiesToShow) {
           <p><strong>Precio:</strong> ${property.price}</p>
           <button onclick="contactProperty(${property.id})">Contactar</button>
       `;
-
+      propertyCard.addEventListener("click", () => showPropertyDetail(property));
       propertyList.appendChild(propertyCard);
+
+
+
+
   });
 }
 
