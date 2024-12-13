@@ -406,7 +406,7 @@ function showPropertyDetail(property) {
 // Volver a la lista de propiedades
 document.getElementById("backButton").addEventListener("click", () => {
   const detailSection = document.getElementById("property-detail");
-  const listSection = document.getElementById("property-list1");
+  const listSection = document.getElementById("property-list");
 
   detailSection.style.display = "none";
   listSection.style.display = "block";
