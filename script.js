@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("la data fue cargada directamente");
     })
     .catch((error) => console.error("Error al cargar el archivo:", error));
-    alert("la data fue NO 1111 esogida directamente");
+    //alert("la data fue NO 1111 esogida directamente");
 });
 
 /*
@@ -177,7 +177,7 @@ function showPropertyDetail(property) {
             <div class="product-description">
                 <h2 class="product-title">${property.title}</h2>
                 <p class="product-text">${property.description}</p>
-                <button class="product-button">Comprar Ahora</button>
+                
             </div>
 
              <div class="virtual-tour">
@@ -221,16 +221,6 @@ function showPropertyDetail(property) {
   listSection.style.display = "none";
 }
 
-// Volver a la lista de propiedades
-document.getElementById("backButton").addEventListener("click", () => {
-  const detailSection = document.getElementById("property-detail");
-  const listSection = document.getElementById("property-list");
-
-  detailSection.style.display = "none";
-  listSection.style.display = "block";
-});
-
-
 
 // Función para filtrar propiedades por ubicación
 function filterProperties() {
@@ -240,6 +230,17 @@ function filterProperties() {
   );
   loadPropertyCards(filtered);
 }
+
+
+// Volver a la lista de propiedades
+document.getElementById("backButton").addEventListener("click", () => {
+  const detailSection = document.getElementById("property-detail");
+  const listSection = document.getElementById("property-list");
+
+  detailSection.style.display = "none";
+  listSection.style.display = "block";
+});
+
 
 
 
