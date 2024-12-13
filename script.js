@@ -1,7 +1,7 @@
 // script.js
 
 // Ejemplo de propiedades (estas pueden ser obtenidas de un backend o base de datos)
-
+/*
 const properties = [
   {
       id: 1,
@@ -87,7 +87,7 @@ const properties = [
   location: 'Centro',
 },
 ];
-
+*/
 
 // Variables globales
 //let propertyData = [];
@@ -245,3 +245,7 @@ function filterProperties() {
 
 // Evento de búsqueda
 document.getElementById('searchButton').addEventListener('click', filterProperties);
+
+
+loadPropertyCards(propertyData1);
+
