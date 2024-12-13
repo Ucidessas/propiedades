@@ -119,7 +119,8 @@ function displayProperties(propertiesToShow) {
 
   propertiesToShow.forEach(property => {
       const propertyCard = document.createElement('div');
-      propertyCard.classList.add('property-card');
+      propertyCard.classList.add('propertyCard');
+      
 
       propertyCard.innerHTML = `
       
@@ -132,9 +133,7 @@ function displayProperties(propertiesToShow) {
       propertyCard.addEventListener("click", () => showPropertyDetail(property));
       propertyList.appendChild(propertyCard);
 
-
-
-
+  
   });
 }
 
