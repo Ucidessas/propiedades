@@ -127,7 +127,7 @@ function displayProperties(propertiesToShow) {
           <h3>${property.title}</h3>
           <p>${property.description}</p>
           <p><strong>Precio:</strong> ${property.price}</p>
-          <button onclick="contactProperty(${property.id})">Contactar</button>
+          
       `;
       propertyCard.addEventListener("click", () => showPropertyDetail(property));
       propertyList.appendChild(propertyCard);
@@ -139,6 +139,9 @@ function displayProperties(propertiesToShow) {
 }
 
 /*
+<button onclick="contactProperty(${property.id})">Contactar</button>
+
+
 function displayProperties(propertiesToShow) {
   const propertyList = document.getElementById('property-list');
   propertyList.innerHTML = ''; // Limpiar lista existente
@@ -309,7 +312,7 @@ function loadPropertyCards(data) {
 // Mostrar los detalles de una propiedad
 function showPropertyDetail(property) {
   const detailSection = document.getElementById("property-detail");
-  const listSection = document.getElementById("property-list1");
+  const listSection = document.getElementById("property-list");
   const detailContainer = document.getElementById("propertyDetailContainer");
 
   // Llenar el detalle con la información de la propiedad
