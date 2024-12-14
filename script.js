@@ -1,93 +1,4 @@
-// script.js
 
-// Ejemplo de propiedades (estas pueden ser obtenidas de un backend o base de datos)
-/*
-const properties = [
-  {
-      id: 1,
-      image: 'https://lh3.googleusercontent.com/pw/AP1GczOJvngK6SOW6-G4L0D-ffoxxc0sK9iSWPCqu5LcUYUxHaVyFia-hlf094IS-Q51oSoIAoG0FzQdeKlanuOGDOSO9bF-Zqgccd-S1Ba6R0mxw4-KqWqw4z9LHectXm5-tyiJEil5IjvH34gLvLFN6hc=w641-h641-s-no-gm?authuser=0',
-      title: 'Casa en la Zona Norte',
-      description: 'Hermosa casa con 3 habitaciones y 2 baños.',
-      price: '$120,000',
-      location: 'Zona Norte',
-  },
-  {
-      id: 2,
-      image: 'https://lh3.googleusercontent.com/pw/AP1GczMNBbGN4xVS4Eneh_S6zc3b0icMeXJCjYT2k5zwOqLWOhwUqm4rK6ktv6cpY2QGk2eoMHxA9tQRa1tlVjOTn3MDLrPU1VpJmNyH0Lqc8KXQvZmhbzBNEZpB73TOmkAwql6RZPYaf_1PTgfk0jBkRBA=w641-h641-s-no-gm?authuser=0',
-      title: 'Apartamento en el Centro',
-      description: 'Apartamento céntrico con acceso a todos los servicios.',
-      price: '$385,000',
-      location: 'Centro',
-  },
-  {
-    id: 3,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczN825cGe0PUmZm5agaPfAcWSnVP8aS7cIeFaEKEtzM3Nkj7qrajonFUp33lygv-4x7uIRKE_PThwyK55NUuJ6T502TfKIr2Chc7OqUia_qcmkWADKWXmwsSafHlePQWgJLjY-HWxqPnfrXmlRawS5s=w641-h641-s-no-gm?authuser=0',
-    title: 'Apartamento en el Centro3',
-    description: 'Apartamento céntrico con acceso a todos los servicios.',
-    price: '$285,000',
-    location: 'Centro',
-},
-{
-  id: 4,
-  image: 'https://lh3.googleusercontent.com/pw/AP1GczMgIO8pq5k3lUsKPCKqC1INV1CdPzfWg9oMn_LjpKuG-JqY1V1NPaxhbsuiv8JW1FNO6dFmjpKRKe3Lin3KyhRqjYRytTRR60pARcqhqonQCmsaz6TUcKlqyY9b5xbfdlW2SNOnNrSWnF952ZpTtEY=w641-h641-s-no-gm?authuser=0',
-  title: 'Apartamento en el Centro1',
-  description: 'Apartamento céntrico con acceso a todos los servicios.',
-  price: '$805,000',
-  location: 'Centro',
-},
-{
-  id: 5,
-  image: 'https://lh3.googleusercontent.com/pw/AP1GczNf1Q-PhAmu_ldZW8TAnKdgTYaTj3kGTVkL1r60jLH7kPXWTH-b1iFTdPA6qpSxMkwCTR7DmDfYzE40ok77bjn_eQ-lsj1A-hjy-7oX0eFFuTYGNEnVYJj0i3oYevCtGfMLbxhCnB27MQlV3l4Ms7g=w641-h641-s-no-gm?authuser=0',
-  title: 'Apartamento en el Centro2',
-  description: 'Apartamento céntrico con acceso a todos los servicios.',
-  price: '$195,000',
-  location: 'Centro',
-},
-{
-  id: 6,
-  image: 'https://lh3.googleusercontent.com/pw/AP1GczPiGsj_-GsBw_uQVWRdbtNHawrhgBWrWt2G9jZBtWWZNNWJ2FC4-SEiMD0FwuD2L1zd14YbQ43MmPKlYlJS1J_cenpQct5ovhdwUC4eSNn5tuQTWz7J10icC71lLqjcXI4yzFPTyUX7A77rep4wmVs=w641-h641-s-no-gm?authuser=0',
-  title: 'casa sur',
-  description: 'Apartamento céntrico con acceso a todos los servicios.',
-  price: '$105,000',
-  location: 'Zona Sur',
-},
-{
-  id: 7,
-  image: 'https://lh3.googleusercontent.com/pw/AP1GczNIEa6pyI4ye_XZIy-MqbFm8XfBKDKNalmUQiooHqdvfUWnd0DJKLHmE2kUB9EpZWvJ6CtejnXvGuV0GqZxzoRqsDEBiQpgr96rjSBrr5xgdbY_-0PjiCSQOHy_6H3R0ttMPZFQQcpCmxP7kaRcZFs=w641-h641-s-no-gm?authuser=0',
-  title: 'casa norte choco',
-  description: 'Apartamento céntrico con acceso a todos los servicios.',
-  price: '$90,000',
-  location: 'Zona Sur',
-},
-
-{
-  id: 8,
-  image: 'https://lh3.googleusercontent.com/pw/AP1GczMkkNpBpTB7Bn8DmvgzvLg9S_zQnPBr4CwamFy8y6d3Ybgn8KAxZkN_qUG_ebR1qxrqoUnEscQ_2tOOO7lXAcnpWv2Nn2dvDy5eFAY2kBFlx_NrwA6M7B-Afqm9gRT5G4dngEz3VJ3KFv9DMAQMuso=w641-h641-s-no-gm?authuser=0',
-  title: 'casa norte choco',
-  description: 'Apartamento céntrico con acceso a todos los servicios.',
-  price: '$90,000',
-  location: 'Zona Norte',
-},
-
-{
-  id: 9,
-  image: 'https://lh3.googleusercontent.com/pw/AP1GczPSBPC0ZLLK2vqpaVXbZI7_OkJtKQEKWkXCMEOR9enOBZRLpa-4cxav6fA9eSPEnGMb9n7JYOQnjA0oRLgsmE8ZveFEnXdQY4uah0Ekdcoa64JgFIB3ZvxJ71DkTVyEsFsqs3nQ5-bdxzeGerFiTRk=w641-h641-s-no-gm?authuser=0',
-  title: 'casa norte choco',
-  description: 'Apartamento céntrico con acceso a todos los servicios.',
-  price: '$90,000',
-  location: 'Zona Sur',
-},
-
-{
-  id: 10,
-  image: 'https://lh3.googleusercontent.com/pw/AP1GczNj3sFMB535VYnbTvkX7MxzLSzK-jVTfSpfyB1Mxb4sTQdiwfMkyWOX3vFwlysOUxnflHNhaanVNocmfsOujc4aQ6ICAmjLnXNwQWx4j3iD6IlUiSLsVbOR_oo0zEm-vJ70yzhQle0vj8SnA0HVpl4=w641-h641-s-no-gm?authuser=0',
-  title: 'casa campo',
-  description: 'Apartamento céntrico con acceso a todos los servicios.',
-  price: '$900,000',
-  location: 'Centro',
-},
-];
-*/
 
 // Variables globales
 //let propertyData = [];
@@ -137,7 +48,6 @@ document.getElementById("fileInput").addEventListener("change", (event) => {
   }
 });
 */
-
 // Renderizar las tarjetas de propiedades
 function loadPropertyCards(data) {
   const container = document.getElementById("propertyCards");
@@ -151,6 +61,7 @@ function loadPropertyCards(data) {
           <h3>${property.title}</h3>
           <p>${property.description}</p>
           <p><strong>Precio:</strong> ${property.price}</p>
+          <p><strong>Ubicación:</strong> ${property.location}</p>
     `;
 
     // Agregar evento de clic para mostrar los detalles
@@ -176,8 +87,13 @@ function showPropertyDetail(property) {
 
             <div class="product-description">
                 <h2 class="product-title">${property.title}</h2>
+                <p class="product-text"><strong>Descripción: </strong></p>
                 <p class="product-text">${property.description}</p>
-                
+                <p class="product-text"><strong>Habitaciones: </strong> ${property.habita}</p>
+                <p class="product-text"><strong>Baños: </strong> ${property.Bano}</p>
+                <p class="product-text"><strong>Ubicación: </strong> ${property.location}</p>
+                <a href="#contacto" class="super-button">Contactar Ahora</a> 
+              
             </div>
 
              <div class="virtual-tour">
@@ -199,18 +115,6 @@ function showPropertyDetail(property) {
             </div>
 
            
-
-            <div class="contact-section">
-                <h4>Contactar al Vendedor</h4>
-                <form>
-                    <input type="text" placeholder="Tu Nombre" required>
-                    <input type="email" placeholder="Tu Correo" required>
-                    <input type="number" placeholder="Tu Telefono" required>
-                    <input type="text" placeholder="Asesor" required>
-                    <textarea placeholder="Tu Mensaje"></textarea>
-                    <button type="submit" class="product-button">Enviar</button>
-                </form>
-            </div>
         </div>
    </div>
 
@@ -240,6 +144,67 @@ document.getElementById("backButton").addEventListener("click", () => {
   detailSection.style.display = "none";
   listSection.style.display = "block";
 });
+
+
+
+
+
+
+function sendMail() {
+  var params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    number: document.getElementById("numero").value,
+    asesor: document.getElementById("asesor").value,
+    mensaje: document.getElementById("mensaje").value,
+  };
+
+  const serviceID = "service_c8zuhnf";
+  const templateID = "template_99q1mlz";
+
+    emailjs.send(serviceID, templateID, params)
+    .then(res=>{
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("numero").value = "";
+        document.getElementById("asesor").value = "";
+        document.getElementById("mensaje").value = "";
+        console.log(res);
+        alert("Your message sent successfully!!")
+
+    })
+    .catch(err=>console.log(err));
+
+}
+
+
+
+
+/*
+function sendMail() {
+  var params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  const serviceID = "service_olu055n";
+  const templateID = "template_8wcdm7h";
+
+    emailjs.send(serviceID, templateID, params)
+    .then(res=>{
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        console.log(res);
+        alert("Your message sent successfully!!")
+
+    })
+    .catch(err=>console.log(err));
+
+}
+*/
+
 
 
 

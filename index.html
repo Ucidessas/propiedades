@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra y Venta de Propiedades</title>
     <link rel="stylesheet" href="styles.css">
+
+
+    
 </head>
 <body>
     <header>
@@ -21,7 +24,6 @@
         <h2>Subir Archivo de Propiedades</h2>
         <input type="file" id="fileInput" accept=".xlsx, .xls" />
       </section>
-
 -->
       <section >
         <h2>Propiedades Disponibles</h2>
@@ -44,8 +46,27 @@
             <div id="propertyDetailContainer" class="virtual-tour">
               <!-- Detalles de la propiedad seleccionada se mostrarán aquí -->
             </div>
+
+
           </section>
         
+          <section id="contacto" class="virtual-tour">
+            
+              <div class="contact-section" >
+                <h4>Contactar al Vendedor</h4>
+                <form>
+                    <input type="text" id="name" placeholder="Tu Nombre" required>
+                    <input type="email" id="email" placeholder="Tu Correo" required>
+                    <input type="number" id="numero" placeholder="Tu Telefono" required>
+                    <input type="text" id="asesor" placeholder="Asesor" required>
+                    <textarea id="mensaje" placeholder="Tu Mensaje"></textarea>
+                </form>
+            
+                    <button class="super-button" onclick="sendMail()">Submit</button>
+                
+                  </div>
+            
+        </section>
         
     </main>
   
@@ -53,6 +74,12 @@
         <p>&copy; 2024 - Plataforma de Compra y Venta de Propiedades</p>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+     (function () {
+          emailjs.init("j02XYaADe0cDpu3M2");
+                })();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script src="script.js"></script>
 </body>

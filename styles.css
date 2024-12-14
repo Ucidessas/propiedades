@@ -478,6 +478,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
   }
   
   .contact-section form input,
@@ -485,6 +486,7 @@ button:hover {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    text-align: center;
   }
   
   .contact-section form button {
