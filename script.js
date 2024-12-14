@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       loadPropertyCards(propertyData1);
       //displayProperties(propertyData1);
-      alert("la data fue cargada directamente");
+      //alert("la data fue cargada directamente");
     })
     .catch((error) => console.error("Error al cargar el archivo:", error));
     //alert("la data fue NO 1111 esogida directamente");
@@ -97,7 +97,7 @@ function showPropertyDetail(property) {
             </div>
 
              <div class="virtual-tour">
-                <h3>Recorrido Virtual en ensamble</h3>
+                <h3>Recorrido Virtual</h3>
                 
                     <img src="${property.foto1}" alt="Imagen 1">
                     <img src="${property.foto2}" alt="Imagen 2">
