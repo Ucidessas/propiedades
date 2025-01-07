@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((error) => console.error("Error al cargar el archivo:", error));
     //alert("la data fue NO 1111 esogida directamente");
 });
-
 /*
+
 document.getElementById("fileInput").addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
@@ -48,6 +48,7 @@ document.getElementById("fileInput").addEventListener("change", (event) => {
   }
 });
 */
+
 // Renderizar las tarjetas de propiedades
 function loadPropertyCards(data) {
   const container = document.getElementById("propertyCards");
@@ -76,6 +77,19 @@ function showPropertyDetail(property) {
   const listSection = document.getElementById("property-list");
   const detailContainer = document.getElementById("propertyDetailContainer");
 
+
+  const fotos = [property.foto1, property.foto2, property.foto3, property.foto4, property.foto5, property.foto6, property.foto7, property.foto8];
+
+
+  const imageHtml = fotos
+        .map((foto, index) => {
+            if (foto && foto.trim() !== "") {
+                return `<img src="${foto}" alt="Imagen ${index + 1}" style="margin: 10px; max-width: 100%; height: auto;">`;
+            }
+            return ""; // Si no hay foto, no se genera contenido
+        })
+        .join("");
+
   // Llenar el detalle con la información de la propiedad
   detailContainer.innerHTML = `
 
@@ -97,24 +111,17 @@ function showPropertyDetail(property) {
             </div>
 
              <div class="virtual-tour">
-                <h3>Recorrido Virtual</h3>
-                
-                    <img src="${property.foto1}" alt="Imagen 1">
-                    <img src="${property.foto2}" alt="Imagen 2">
-                
-                    <img src="${property.foto3}" alt="Imagen 3">
-                
-                    <img src="${property.foto4}" alt="Imagen 4">
-                
-                <img src="${property.foto5}" alt="Imagen 5">
-                <img src="${property.foto6}" alt="Imagen 6">
-                <img src="${property.foto7}" alt="Imagen 7">
-                <img src="${property.foto8}" alt="Imagen 8">
-            
-                
+            <h3>Recorrido Virtual en ensamble</h3>
+            ${imageHtml}
             </div>
-
-           
+           <div class="contacto-whatsapp"><a href="https://wa.me/3118208928">
+                <h3 class="contacto-titulo">Contacto WhatsApp</h3>
+                <p class="contacto-telefono">
+                    <strong>Teléfono:</strong> 
+                    <a href="https://wa.me/3118208928" target="_blank">3118208928</a>
+                </p>
+                </a>
+            </div>
         </div>
    </div>
 

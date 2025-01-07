@@ -419,7 +419,7 @@ button:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
     text-align: center;
     color: #fff; /* Texto blanco para contrastar */
-    max-width: 400px;
+    max-width: 1200px;
     margin: 20px auto; /* Centrado automático */
     transition: transform 0.3s, box-shadow 0.3s;
   }
@@ -501,6 +501,42 @@ button:hover {
   .contact-section form button:hover {
     background-color: #45a049;
   }
+
+  .contacto-whatsapp {
+    border: 2px solid #25D366; /* Color característico de WhatsApp */
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #F0F8F6; /* Color de fondo suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacto-titulo {
+    font-size: 20px;
+    color: #075E54; /* Verde oscuro de WhatsApp */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contacto-telefono {
+    font-size: 18px;
+    color: #333; /* Texto oscuro para buena legibilidad */
+}
+
+.contacto-telefono a {
+    text-decoration: none;
+    color: #25D366; /* Verde de WhatsApp */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contacto-telefono a:hover {
+    color: #128C7E; /* Cambio a un tono más oscuro en hover */
+}
   
 
 
@@ -556,4 +592,36 @@ button:hover {
 .super-button span {
   position: relative;
   z-index: 1;
+}
+
+
+nav {
+  background-color: #000e3d;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 0;
+  display: block;
+}
+
+nav ul li a:hover {
+  border-bottom: 2px solid #fff;
 }
