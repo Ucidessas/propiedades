@@ -7,7 +7,7 @@ body {
   /*background-color: #f5f5f5;*/
 
   text-align: center;
-  background: linear-gradient(135deg, #4538ff, #5eaefa); /* Fondo degradado atractivo */
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Azul confiable y profesional */ /* Fondo degradado atractivo */
   /*background: rgb(234, 253, 126);*/
   align-items: center;
 }
@@ -15,7 +15,7 @@ body {
 
 
 h2 {
-  color: #f50f0f;
+  color: #FF5722;
   font-size: 1.8rem; /* Tamaño grande para destacar */
   font-weight: bold;
   margin-bottom: 10px;
@@ -25,8 +25,8 @@ h2 {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombra para resaltar */
 }
 
-h22 {
-  color: #7f3b91;
+.h22 {
+  color: #9c27b0;
   font-size: 2rem; /* Tamaño grande para destacar */
   font-weight: bold;
   margin-bottom: 10px;
@@ -59,7 +59,7 @@ h4 {
   text-align: center;
 }
 
-h11 {
+.h11 {
   color: #050705;
   font-size: 3.8rem; /* Tamaño grande para destacar */
   font-weight: bold;
@@ -96,7 +96,7 @@ header {
 
 .search-bar button {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #1c1c1c;
   color: white;
   border: none;
   cursor: pointer;
@@ -120,8 +120,8 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.property-details h22 {
-  color: #f50f0f;
+.property-details .h22 {
+  color: #FF5722;
   font-size: 1.8rem; /* Tamaño grande para destacar */
   font-weight: bold;
   margin-bottom: 10px;
@@ -179,7 +179,7 @@ main {
 }
 
 .property-card button {
-  background-color: #4CAF50;
+  background-color: #43a047;
   color: white;
   border: none;
   padding: 10px;
@@ -193,7 +193,7 @@ main {
 
 footer {
   text-align: center;
-  background-color: #333;
+  background-color: #1c1c1c;
   color: white;
   padding: 10px;
 }
@@ -256,7 +256,7 @@ footer {
 .card h3 {
   margin: 0;
   font-size: 20px;
-  color: #4CAF50;
+  color: #43a047;
 }
 
 .card p {
@@ -276,7 +276,7 @@ footer {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #43a047;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -296,7 +296,7 @@ button:hover {
   width: 80%;
   max-width: 1000px;
   margin: auto;
-  background: linear-gradient(135deg, #4538ff, #5eaefa); /* Fondo degradado atractivo */
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Azul confiable y profesional */ /* Fondo degradado atractivo */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
@@ -413,7 +413,7 @@ button:hover {
   
   /* Estilo general del contenedor del producto */
   .product-description {
-    background: linear-gradient(135deg, #4538ff, #5eaefa); /* Fondo degradado atractivo */
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Azul confiable y profesional */ /* Fondo degradado atractivo */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
@@ -491,7 +491,7 @@ button:hover {
   
   .contact-section form button {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #43a047;
     color: white;
     border: none;
     border-radius: 5px;
@@ -524,7 +524,7 @@ button:hover {
 
 .contacto-telefono {
     font-size: 18px;
-    color: #333; /* Texto oscuro para buena legibilidad */
+    color: #1c1c1c; /* Texto oscuro para buena legibilidad */
 }
 
 .contacto-telefono a {
